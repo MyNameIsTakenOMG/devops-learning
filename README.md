@@ -32,4 +32,32 @@
      - yum repos: yum repolist
      - package: yum list + package / yum remove + package / yum --showduplicates list + package / yum install + package-{version number}
  - Service Management
-   - 
+   - start service:
+     - service httpd start
+     - systemctl start httpd
+   - stop service:
+     - systemctl stop httpd
+   - check status:
+     - systemctl status httpd
+   - config service to start / not start at startup:
+     - systemctl enable httpd / systemctl disable httpd
+   - config custom services or apps for systemctl to manage
+     - under the path: `/etc/systemd/system`, create a unit file of custom service or app, eg. my_app.service (note the extension: `.service`)
+     - in the unit file, there are many sections:
+       - `[service]` : `ExecStart=the command to run custom service or app`
+       - then, run `systemctl daemon-reload` to refresh all services in the system.
+       - then, run `systemctl start custom_service_name` to run the custom service.
+       - then add a new section `[install]` with `WantedBy=multi-user.target` to make sure custom service start after `multi-user.target` starts during the system boots up.
+       - then run `systemctl enable custom_service_name` to make sure custom service starts during the system boots up.
+       - other sections, like `[Unit]` for metadata with `Description=`.
+       - and for `[service]`, there are others declaratives, `[ExecStartPre]`, or `[ExecStartPost]`. and if the custom service is expected to restart when crashing, then add another declarative `Restart=always`
+    
+
+
+
+
+
+
+
+
+
