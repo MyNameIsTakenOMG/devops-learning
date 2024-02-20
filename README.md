@@ -2,6 +2,7 @@
 ## Table of Contents
  - [Linux Basics](#linux-basics)
  - [Networking Basics](#networking-basics)
+ - [CloudFormation](#cloudformation)
 
 
 ## Linux Basics
@@ -74,7 +75,12 @@
    - nslookup: `nslookup exmaple.myweb.com`: doesn't look up the local host file
    - dig: compared to nslookup, dig will return more details about the domain
 
-
+## CloudFormation
+ - `resources section`: Resources(not a list, but an object).<logical ID>.Type/Properties[] --> cloudformation template ref
+ - parameters:
+ - metadata: used to group up parameters(just like contacts book), but still need `parameter section`
+ - intrinsic functions:
+   - Ref
 
 
 
