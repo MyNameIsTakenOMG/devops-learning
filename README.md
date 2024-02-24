@@ -1,9 +1,25 @@
 # devops-learning
 ## Table of Contents
+ - [DevOps Tools](#devops-tools)
  - [Linux Basics](#linux-basics)
  - [Networking Basics](#networking-basics)
- - [CloudFormation](#cloudformation)
+ - [Applications Basics](#applications-basics)
+ - [Git](#git)
+ - [Jenkins](#jenkins)
+ - [Docker](#docker)
+ - [Kubernetes](#kubernetes)
+ - [Microservices Architecture](#microserviecs-architecture)
+ - [Ansible](#ansible)
+ - [Terraform](#terraform)
+ - [Python](#python)
 
+## DevOps Tools
+ - version control: git, github...
+ - ci/cd pipeline: gitlab, jenkins...
+ - container and container orchestration: docker, k8s...
+ - infrastructure as code: terraform, cloudformation...
+ - infrastructure configuration tool: ansible
+ - monitoring and maintaining underlying infras: prometheus and grafana
 
 ## Linux Basics
  - Linux CLI
@@ -75,16 +91,52 @@
    - nslookup: `nslookup exmaple.myweb.com`: doesn't look up the local host file
    - dig: compared to nslookup, dig will return more details about the domain
 
-## CloudFormation
- - `resources section`: Resources(not a list, but an object).<logical ID>.Type/Properties[] --> cloudformation template ref
- - parameters:
- - metadata: used to group up parameters(just like contacts book), but still need `parameter section`
- - intrinsic functions:
-   - Ref
-
-
-
-
+## Applications Basics
+ - overview: `compiled`: developed, compiled, executed, such as java, c, c++ ; `interpreted`: developed, executed, such as nodejs, python, ruby. for modern compilers, they first translate the source code into an intermediary `Byte Code`, then the interpreter uses this `Byte Code` to translate to `Machine Code`.
+ - java
+   - overview: JDK: develop(jdb: debug, javadoc: documentation), build(javac: compile, jar: archive code and libraries into a jar file), run(JRE: runtime env, java: loader to run the apps). **note:** before v9, jdk and jre are seperated
+   - `export PATH=$PATH:/path/to/directory` at the end of the `.bashrc` file for the user, then `source ~/.bashrc`. for system-side setup, `sudo vi /etc/system`, add `PATH="$PATH:/path/to/directory"`, then `source /etc/environment` to apply the changes.
+   - build & packaging: develop the code, then use `javac` to compile the code to an intermediary `Byte Code`, then we can run the `Byte Code` in anywhere that supports `JVM`. for packaging, use `jar cf <output filename> {...classes}`(a manifest file created at path: META-INF/MANIFEST.MF). then run `java -jar <jar file name>`. for document, `javadoc -d doc <source code>` **(when executing commands, be sure at the target path)** --> build tools to handle all these steps: Maven, Gradle, ANT(compile, package, document) 
+ - nodejs - npm: `npm -v`, `npm search file`, `npm install file`, `package.json`(containing the metadata of the project), `node -e "console.log(module.paths)"`, `npm i file -g`. `built-in packages`: `/usr/lib/node_modules/npm/node_modules/`, `external packages`: `/usr/lib/node_modules`
+ - python
+   - overview: `python2`(2000-2010), `python3`(2008-present) (not backward compatibility guaranteed, careful when migration). `yum install python2`, `yum install python36`. `note`: `if __name__ == '__main__'`
+   - pip: pip2, pip3 for different python versions. `pip -V` to find out the python version. `pip install <package>`. the package path: `usr/lib(lib64)/python2.7(python3.6)/<packages...>`. `pip show <package>`. to find out the packages, `python2 -c "import sys; print(sys.path)"`. requirements: `requirements.txt`, and then `pip install -r requirements.txt`(always specify the versions of packages). for upgrade or uninstall, `pip install <package> --upgrade`, `pip uninstall <package>`. other package managers: `easy_install`(no need for unpackaging), `wheels`(need for unpackaging)
+## Git
+ - overview
+ - branches
+ - initialize remote repo
+## Jenkins
+ - overview
+ - prerequisites
+ - installation
+ - jenkins plugins and integrations
+ - systems administration
+ - pipelines
+## Docker
+ - overview
+ - commands
+ - docker run
+ - docker image
+ - docker engine_storage and networking
+ - registry
+## Kubernetes
+ - overview
+ - setup
+ - concepts and objects
+ - yaml 
+## Microservices Architecture
+## Ansible
+ - overview
+ - concepts
+ - conditions, loops & roles
+## Terraform
+ - overview
+ - introduction of IaC
+ - getting started
+ - basics
+ - terraform state
+ - working with Terraform
+## Python
 
 
 
