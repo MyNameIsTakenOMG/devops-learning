@@ -107,10 +107,16 @@
  - initialize remote repo 
 ## Jenkins
  - overview
- - prerequisites
+ - prerequisites: CI/CD : `continuous delivery != continuous deployment`
  - installation
  - jenkins plugins and integrations
- - systems administration
+ - `a note for ssh:`
+   - `ssh -i /home/mike/.ssh/jenkins_key -l mike -p 8022 jenkins-server help`
+   - `-i` flag is used to point to mike's private SSH key. Remember, we have already added the public key in the Jenkins configuration.
+   - `-l` is the login user which in our example is mike
+   - `-p` is the port which we found out in the previous step to be 8022
+ - systems administration: `backup`: `$JENKINS_HOME folder`(configuration files-->config.xml; jobs folder), `restore`, `monitor`, `scale`, `manage`
+   - 3 ways to backup: `file system snapshot`, `plugins for backup`, `write a shell script that backs up the jenkins instance`
  - pipelines
 ## Docker
  - overview
