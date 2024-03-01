@@ -102,9 +102,9 @@
    - overview: `python2`(2000-2010), `python3`(2008-present) (not backward compatibility guaranteed, careful when migration). `yum install python2`, `yum install python36`. `note`: `if __name__ == '__main__'`
    - pip: pip2, pip3 for different python versions. `pip -V` to find out the python version. `pip install <package>`. the package path: `usr/lib(lib64)/python2.7(python3.6)/<packages...>`. `pip show <package>`. to find out the packages, `python2 -c "import sys; print(sys.path)"`. requirements: `requirements.txt`, and then `pip install -r requirements.txt`(always specify the versions of packages). for upgrade or uninstall, `pip install <package> --upgrade`, `pip uninstall <package>`. other package managers: `easy_install`(no need for unpackaging), `wheels`(need for unpackaging)
 ## Git
- - overview: local & remote repos, init, `git config user.email sarah@example.com`, `git config user.name sarah`, `git log --name-only`, `git log --one-line`
+ - overview: local & remote repos, init, `git config user.email sarah@example.com`, `git config user.name sarah`, `git log --name-only`,`git log --decorate`,`git log --graph --decorate`, `git log --one-line`, `git rebase -i`, `git cherry-pick`, `git reflog`, `git search/find: --before, --after, --grep, --author, -- <filename>, `, `git submodules`
  - branches
- - initialize remote repo
+ - initialize remote repo 
 ## Jenkins
  - overview
  - prerequisites
