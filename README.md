@@ -116,8 +116,11 @@
    - `-l` is the login user which in our example is mike
    - `-p` is the port which we found out in the previous step to be 8022
  - systems administration: `backup`: `$JENKINS_HOME folder`(configuration files-->config.xml; jobs folder), `restore`, `monitor`, `scale`, `manage`
-   - 3 ways to backup: `file system snapshot`, `plugins for backup`, `write a shell script that backs up the jenkins instance`
- - pipelines
+   - 3 ways to backup: `file system snapshot`, `plugins for backup`: (Thinbackup-->backup&restore), `write a shell script that backs up the jenkins instance`
+ - pipelines:
+   - `pipeline`, `agent any`(build agent), `stage(*){}`, `steps{*}`, `multi-stage pipeline`
+   - `Note: Here localhost:8085 refers to our Jenkins Controller and the /prometheus/ metrics path is exposed by the prometheus-metrics plugin that we installed previously`
+   - first time tried out `prometheus` and `grafana`
 ## Docker
  - overview
  - commands
