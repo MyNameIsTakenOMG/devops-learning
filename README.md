@@ -123,7 +123,7 @@
    - first time tried out `prometheus` and `grafana`
 ## Docker
  - overview
- - commands
+ - commands: `docker run <image>`, `docker ps`, `docker ps -a`, `docker stop`,`docker rm`,`docker images`,`docker rmi`,`docker pull`,(containers only live as long as the process inside is alive),`docker run <image> sleep 5`,`docker exec`,`docker run -d`, `docker attach <container_id>`
  - docker run
  - docker image
  - docker engine_storage and networking
